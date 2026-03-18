@@ -14,18 +14,12 @@ setopt HIST_FIND_NO_DUPS       # Don't show duplicates in history search
 setopt HIST_SAVE_NO_DUPS
 setopt EXTENDED_HISTORY        # Save command timestamps and duration
 
-# Better ↑/↓ navigation: type prefix → arrow keys search matching history
-bindkey '^[[A' history-beginning-search-backward
-bindkey '^[[B' history-beginning-search-forward
-
 
 # ============================================================================
 #  PROMPT & APPEARANCE
 # ============================================================================
 autoload -Uz colors && colors
-
-PROMPT='%~: '                           # Simple current-directory prompt
-
+PROMPT='%~: '
 export LS_COLORS="di=34:fi=0:ln=36:ex=32"
 alias ls='ls --color=auto'
 
@@ -83,6 +77,16 @@ export PATH="$IVY_HOME/bin:$PATH"
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ll='ls -lah'
+alias e='explorer.exe'
+alias mkdir='mkdir -p'                              
+alias cp='cp -iv'                                 
+alias mv='mv -iv'                                   
+alias rm='rm -iv'                                 
+alias df='df -h'                             
+alias du='du -sh'                                  
+alias ports='ss -tulnp'                            
+alias myip='curl -s ifconfig.me'                  
+alias path='echo $PATH | tr ":" "\n"'              
 
 
 # ============================================================================
@@ -100,8 +104,14 @@ alias dcprune='docker system prune -a --volumes -f'
 # ============================================================================
 alias k='kubectl'
 alias kgp='kubectl get pods --watch'
+alias kgs='kubectl get sparkapp --watch'
 alias kgn='kubectl get nodes'
 alias kdelp='kubectl delete pod'
+alias kgpa='kubectl get pods --all-namespaces'
+alias kdp='kubectl describe pod'
+alias klp='kubectl logs -f'
+alias kexp='kubectl get pod -o wide'
+alias kexec='kubectl exec -it'
 
 
 # ============================================================================
@@ -115,6 +125,7 @@ alias pydeact='deactivate'
 # ============================================================================
 #  GLOBAL ALIASES (can be used anywhere in the command line)
 # ============================================================================
-alias -g G='| grep -i'
+alias -g G='| rg -i'
 alias -g L='| less'
 alias -g DN='>/dev/null 2>&1'
+alias -g b64='| base64 -d; echo'
