@@ -1,17 +1,14 @@
 # .zshrc
 
-Personal Zsh config for daily shell work — history, completion, plugins, and aliases for Docker, Kubernetes, Git, and Python.
+Personal Zsh config for daily shell work : history, completion, plugins, and aliases for Docker, Kubernetes, Git, and Python.
 
 Also uses [tsnip](https://github.com/aashishvinu/tsnip) as a snippet manager for saving and running shell snippets (`Ctrl+G`).
-
-Most optional tools fail soft: if something isn't installed, the related aliases/init simply skip.
 
 ---
 
 ## Table of contents
 
 - [Features](#features)
-- [Keybindings](#keybindings)
 - [Dependencies](#dependencies)
 - [Aliases](#aliases)
 - [Installation](#installation)
@@ -26,8 +23,8 @@ Most optional tools fail soft: if something isn't installed, the related aliases
 | **Prompt** | Minimal `~/path: ` |
 | **Completion** | Case-insensitive matching with menu select |
 | **Plugins** | [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions), [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) |
-| **Atuin** | Better shell history search (if installed) |
-| **Zoxide** | Smarter directory jumping via `j` / `z` (if installed) |
+| **Atuin** | Better shell history search |
+| **Zoxide** | Smarter directory jumping via `j` / `z` |
 | **tsnip** | [Snippet manager](https://github.com/aashishvinu/tsnip) for browsing and running saved shell snippets (`Ctrl+G`) |
 
 ---
@@ -45,12 +42,11 @@ Most optional tools fail soft: if something isn't installed, the related aliases
 
 ## Dependencies
 
-### Plugins (recommended)
+### Plugins
 
 Expects `$ZSH_CUSTOM/plugins/…` (Oh My Zsh layout). Sourced with `2>/dev/null || true`.
 
 ```sh
-# Example if using Oh My Zsh:
 git clone https://github.com/zsh-users/zsh-autosuggestions \
   ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
